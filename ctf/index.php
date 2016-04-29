@@ -62,8 +62,8 @@
 				<h2>WEB</h2>
 			</div>
 				<div id="opcion_web">
-					<a href="pergunta01/teste01.html" target="iframe"><div>1</div></a>
-					<a href="index.php" target="iframe"><div>2</div></a>
+					<a href="pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="pergunta02/index.php" target="iframe"><div>2</div></a>
 					<a href="index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="revision">
