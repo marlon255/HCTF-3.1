@@ -25,6 +25,14 @@
         $("#opcion_custom").toggle();
     });
     });
+	$(document).ready(function(){
+    $("#picture").click(function(){
+        $("#exit").toggle();
+    });
+    });
+</script>
+<script type="text/javascript">
+
 </script>
 </head>
 <body>
@@ -42,6 +50,10 @@
 			</div>
 			<div id="picture">
 			</div>
+			<div id="exit">
+				<h2>Alterar Imagem</h2>
+				<h2>Sair</h2>
+			</div>
 		</div>
 	</div>
 	<div id="body">
@@ -50,37 +62,36 @@
 				<h2>WEB</h2>
 			</div>
 				<div id="opcion_web">
-					<button>1</button><br>
-					<button>2</button><br>
-					<button>3</button>
+					<a href="pergunta01/teste01.html" target="iframe"><div>1</div></a>
+					<a href="index.php" target="iframe"><div>2</div></a>
+					<a href="index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="revision">
 				<h2>REVISION</h2>
 			</div>
 				<div id="opcion_revision">
-					<button>1</button><br>
-					<button>2</button><br>
-					<button>3</button>
+					<a href="index.php" target="iframe"><div>1</div></a>
+					<a href="index.php" target="iframe"><div>2</div></a>
+					<a href="index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="cryptography">
 				<h2>CRYPTO</h2>
 			</div>
 				<div id="opcion_cryptography">
-					<button>1</button><br>
-					<button>2</button><br>
-					<button>3</button>
+					<a href="index.php" target="iframe"><div>1</div></a>
+					<a href="index.php" target="iframe"><div>2</div></a>
+					<a href="index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="custom">
 				<h2>CUSTOM</h2>
 			</div>
 				<div id="opcion_custom">
-					<button>1</button><br>
-					<button>2</button><br>
-					<button>3</button>
+					<a href="index.php" target="iframe"><div>1</div></a>
+					<a href="index.php" target="iframe"><div>2</div></a>
+					<a href="index.php" target="iframe"><div>3</div></a>
 				</div>
 		</div>
-		<div id="meio">
+		<iframe name="iframe" id="iframe">
 		</div>
 	</div>
 </body>
-</html>

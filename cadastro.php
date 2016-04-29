@@ -19,10 +19,10 @@
 				<input type="text" name="" id="" placeholder="Login" class="text" >
 				<input type="password" name="" id="" placeholder="Password" class="text" >
 				<input type="password" name="" id="" placeholder="Password Again" class="text" >
-				<input type="submit" name="" id="" value="Cadastrar" class="submit" >
+				<input type="submit" name="" id="" value="Register" class="submit" >
 			</fieldset>
 		</form>
 	</div>
-	<div id="cadastro" onClick="location.href='index.php';">Voltar</div>
+	<div id="cadastro" onClick="location.href='index.php';">Back</div>
 </body>
 </html>
