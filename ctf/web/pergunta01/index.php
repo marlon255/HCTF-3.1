@@ -6,20 +6,20 @@
 <?php
 	require_once('../../../php/conexao.php');
 	require_once('php/select.php');
-	$resposta_sql = "SELECT * FROM respostas WHERE id_user = '49' && id_pergunta = '1'";
+	$resposta_sql = "SELECT * FROM respostas WHERE id_user = '49' && respondeu = '".$rows['resposta']."'";
 	$respostadb = $PDO->prepare($resposta_sql);
 	$respostadb->execute();
-switch ($respostadb) {
-	case $respostadb > '0':
-		echo "<script>alert('Você ja respondeu está pergunta!')</script>";
-		echo "<script>location.href='../../home.php'</script>";
-		break;
-	case $respostadb < '0':
+	$respondeudb = $respostadb->rowCount();
+
+/* VERIFICANDO SE JA FOI RESPONDIDA */
+switch ($respondeudb) {
+	case $respondeudb === "0":
+	/* CASO JA TENHA SIDO RESPONDIDA, VERIFICA SE APERTOU O BOTAO DE RESPONDER */
 	if(isset($_POST['submitweb1'])){
 		$respostaweb1 = $_POST['respostaweb1'];
 		$respostaweb1db = $rows['resposta'];
 		switch ($respostaweb1) {
-			case $respostaweb1===$respostaweb1db:
+			case $respostaweb1 === $respostaweb1db:
 			/* ADICIONANDO O PONTO DA QUESTAO AO USUARIO */
 				$ponto_user = '395';
 				$pontoweb1db = $rows['valor'];
@@ -31,12 +31,14 @@ switch ($respostadb) {
 				$id_user = "49";
 				$id_pergunta = $rows['id'];
 				$resposta = $_POST['respostaweb1'];
-				$sql_question = "INSERT INTO respostas (id_user, id_pergunta, resposta) VALUES ('$id_user','$id_pergunta','$resposta')";
+				$sql_question = "INSERT INTO respostas (id_user, id_pergunta, respondeu) VALUES ('$id_user','$id_pergunta','$resposta')";
 				$question = $PDO->prepare($sql_question);
 				$question->execute();
+				echo "<script>alert('Sua resposta está correta. Parabêns, vá para a próxima pergunta!')</script>";
+				echo "<script>location.href='../../home.php'</script>";
 				break;
-			case $respostaweb1!=='HCTF{robots_include}':
-				echo "<script>alert('Você errou a resposta.');</script>";
+			case $respostaweb1 !== $respostaweb1db:
+				echo "<script>alert('Sua resposta não está correta, tente novamente!');</script>";
 				break;
 		}
 	}
@@ -54,6 +56,10 @@ switch ($respostadb) {
 	</div>
 </body>
 <?php
+		break;
+		case $respondeudb = "1":
+		echo "<script>alert('Você ja respondeu está pergunta!')</script>";
+		echo "<script>location.href='../../home.php'</script>";
 		break;
 }
 ?>

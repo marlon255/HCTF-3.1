@@ -1,14 +1,13 @@
-﻿
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2016 at 01:56 AM
--- Server version: 10.0.20-MariaDB
--- PHP Version: 5.2.17
+-- Generation Time: 30-Abr-2016 às 05:00
+-- Versão do servidor: 5.6.20-log
+-- PHP Version: 5.4.31
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -18,26 +17,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `u759560044_ctf`
+-- Database: `u288612332_php`
 --
+CREATE DATABASE IF NOT EXISTS `u288612332_php` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `u288612332_php`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perguntas`
+-- Estrutura da tabela `perguntas`
 --
 
 CREATE TABLE IF NOT EXISTS `perguntas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `pergunta` varchar(60) NOT NULL,
   `resposta` varchar(60) NOT NULL,
   `modulo` varchar(30) NOT NULL,
-  `valor` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `valor` int(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `perguntas`
+-- Extraindo dados da tabela `perguntas`
 --
 
 INSERT INTO `perguntas` (`id`, `pergunta`, `resposta`, `modulo`, `valor`) VALUES
@@ -57,54 +57,48 @@ INSERT INTO `perguntas` (`id`, `pergunta`, `resposta`, `modulo`, `valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `respostas`
+-- Estrutura da tabela `respostas`
 --
 
 CREATE TABLE IF NOT EXISTS `respostas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_pergunta` int(11) NOT NULL,
-  `resposta` varchar(60) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+  `respondeu` varchar(60) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `respostas`
+-- Extraindo dados da tabela `respostas`
 --
 
-INSERT INTO `respostas` (`id`, `id_user`, `id_pergunta`, `resposta`) VALUES
-(10, 49, 1, '<?php?>'),
-(19, 49, 4, 'decisão'),
-(11, 49, 2, '1'),
-(21, 49, 3, 'syntax'),
-(23, 49, 5, 'heaven{c3rt1f1c4d0}');
+INSERT INTO `respostas` (`id`, `id_user`, `id_pergunta`, `respondeu`) VALUES
+(1, 49, 1, 'HCTF{robots_include}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estrutura da tabela `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+`id_user` int(11) NOT NULL,
   `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `usuario` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `senha` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `pontos` int(11) NOT NULL,
-  `id_pergunta` int(11) NOT NULL,
-  PRIMARY KEY (`id_user`)
+  `id_pergunta` int(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=59 ;
 
 --
--- Dumping data for table `users`
+-- Extraindo dados da tabela `users`
 --
 
 INSERT INTO `users` (`id_user`, `nome`, `email`, `usuario`, `senha`, `pontos`, `id_pergunta`) VALUES
 (48, 'j', 'jaum.123@hotmail.com', '1234es', '123', 50, 3),
 (47, 'j', 'jaum.123@hotmail.com', '1234es', '1234qwe', 50, 3),
 (46, 'gilmar', 'gilmarheavensilva@hotmail.com', 'heaven', 'kimimaro', 75, 6),
-(49, 'hue', 'hue', 'hue', 'hue', 395, 1),
+(49, 'hue', 'hue', 'hue', 'hue', 405, 1),
 (50, 'Marlon', 'marlon.0255@gmail.com', 'marlon255', 'xb4723aa4', 0, 1),
 (51, 'novo', 'novo', 'novo', 'novo', 105, 6),
 (52, 'ComiVC', 'lalala@souhacker', 'hackergilmar', 'gilmarlindo', 0, 1),
@@ -115,6 +109,47 @@ INSERT INTO `users` (`id_user`, `nome`, `email`, `usuario`, `senha`, `pontos`, `
 (57, 'ola', 'ola', 'ola', 'ola', 10, 1),
 (58, 'teste', 'teste@teste.com', 'teste', 'teste', 0, 1);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `perguntas`
+--
+ALTER TABLE `perguntas`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `respostas`
+--
+ALTER TABLE `respostas`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `perguntas`
+--
+ALTER TABLE `perguntas`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `respostas`
+--
+ALTER TABLE `respostas`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
