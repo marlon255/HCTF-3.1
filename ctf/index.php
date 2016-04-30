@@ -7,27 +7,27 @@
 <script type="text/javascript">
 	$(document).ready(function(){
     $("#web").click(function(){
-        $("#opcion_web").toggle();
+        $("#opcion_web").toggle(500);
     });
     });
     $(document).ready(function(){
     $("#revision").click(function(){
-        $("#opcion_revision").toggle();
+        $("#opcion_revision").toggle(500);
     });
     });
     $(document).ready(function(){
     $("#cryptography").click(function(){
-        $("#opcion_cryptography").toggle();
+        $("#opcion_cryptography").toggle(500);
     });
     });
     $(document).ready(function(){
     $("#custom").click(function(){
-        $("#opcion_custom").toggle();
+        $("#opcion_custom").toggle(500);
     });
     });
 	$(document).ready(function(){
     $("#picture").click(function(){
-        $("#exit").toggle();
+        $("#exit").toggle(200);
     });
     });
 </script>
@@ -62,36 +62,36 @@
 				<h2>WEB</h2>
 			</div>
 				<div id="opcion_web">
-					<a href="pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="index.php" target="iframe"><div>3</div></a>
+					<a href="web/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="web/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="web/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="revision">
 				<h2>REVISION</h2>
 			</div>
 				<div id="opcion_revision">
-					<a href="index.php" target="iframe"><div>1</div></a>
-					<a href="index.php" target="iframe"><div>2</div></a>
-					<a href="index.php" target="iframe"><div>3</div></a>
+					<a href="revision/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="revision/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="revision/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="cryptography">
 				<h2>CRYPTO</h2>
 			</div>
 				<div id="opcion_cryptography">
-					<a href="index.php" target="iframe"><div>1</div></a>
-					<a href="index.php" target="iframe"><div>2</div></a>
-					<a href="index.php" target="iframe"><div>3</div></a>
+					<a href="crypto/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="crypto/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="crypto/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="custom">
 				<h2>CUSTOM</h2>
 			</div>
 				<div id="opcion_custom">
-					<a href="index.php" target="iframe"><div>1</div></a>
-					<a href="index.php" target="iframe"><div>2</div></a>
-					<a href="index.php" target="iframe"><div>3</div></a>
+					<a href="custom/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="custom/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="custom/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 		</div>
-		<iframe name="iframe" id="iframe">
+		<iframe name="iframe" id="iframe" src="home.php">
 		</div>
 	</div>
 </body>

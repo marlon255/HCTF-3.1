@@ -101,7 +101,7 @@ div#web{
 	background-position: top 8px center;
 }
 div#opcion_web{
-	width: 100px;
+	width: 50px;
 	height: 118px;
 	border: 1px solid #FFF;
 	position: absolute;
@@ -112,14 +112,13 @@ div#opcion_web{
 	background: #666;
 }
 div#opcion_web div{
-	width: 10px;
 	cursor: pointer;
 	padding: 5px;
 	color: #FFF;
 	background: #999;
 	border: 0px solid #FFF;
 	border-radius: 4px;
-	margin: 10px 0px 0px 40px;
+	margin: 10px 0px 0px 0px;
 	font-size: 12px;
 	text-align: center
 }
@@ -155,7 +154,7 @@ div#revision{
 	background-position: top 8px center;
 }
 div#opcion_revision{
-	width: 100px;
+	width: 50px;
 	height: 118px;
 	border: 1px solid #FFF;
 	position: absolute;
@@ -166,14 +165,13 @@ div#opcion_revision{
 	background: #666;
 }
 div#opcion_revision div{
-	width: 10px;
 	cursor: pointer;
 	padding: 5px;
 	color: #FFF;
 	background: #999;
 	border: 0px solid #FFF;
 	border-radius: 4px;
-	margin: 10px 0px 0px 40px;
+	margin: 10px 0px 0px 0px;
 	font-size: 12px;
 	text-align: center
 }
@@ -209,7 +207,7 @@ div#cryptography{
 	background-position: top 8px center;
 }
 div#opcion_cryptography{
-	width: 100px;
+	width: 50px;
 	height: 118px;
 	border: 1px solid #FFF;
 	position: absolute;
@@ -220,14 +218,13 @@ div#opcion_cryptography{
 	background: #666;
 }
 div#opcion_cryptography div{
-	width: 10px;
 	cursor: pointer;
 	padding: 5px;
 	color: #FFF;
 	background: #999;
 	border: 0px solid #FFF;
 	border-radius: 4px;
-	margin: 10px 0px 0px 40px;
+	margin: 10px 0px 0px 0px;
 	font-size: 12px;
 	text-align: center
 }
@@ -263,7 +260,7 @@ div#custom{
 	background-position: top 8px center;
 }
 div#opcion_custom{
-	width: 100px;
+	width: 50px;
 	height: 118px;
 	border: 1px solid #FFF;
 	position: absolute;
@@ -274,14 +271,13 @@ div#opcion_custom{
 	background: #666;
 }
 div#opcion_custom div{
-	width: 10px;
 	cursor: pointer;
 	padding: 5px;
 	color: #FFF;
 	background: #999;
 	border: 0px solid #FFF;
 	border-radius: 4px;
-	margin: 10px 0px 0px 40px;
+	margin: 10px 0px 0px 0px;
 	font-size: 12px;
 	text-align: center
 }
@@ -326,4 +322,10 @@ iframe#iframe{
 	-webkit-box-shadow: 2px 2px 10px 2px rgba(255,255,255,0.75);
 	-moz-box-shadow: 2px 2px 10px 2px rgba(255,255,255,0.75);
 	box-shadow: 2px 2px 10px 2px rgba(255,255,255,0.75);
+}
+div#home{
+	width: 500px;
+	text-align: center;
+	height: 300px;
+	margin: 30px auto;
 }
