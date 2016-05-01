@@ -17,7 +17,7 @@ div#logo{
 	width: 104px;
 	height: 70px;
 	border: 0px solid #FFF;
-	background-image: url(../../img/logo.png);
+	background-image: url(../../../img/logo.png);
 	background-size: 104px 70px;
 	float: left;
 }
@@ -61,7 +61,7 @@ div#picture{
 	float: left;
 	border-radius: 50px;
 	background: #222;
-	background-image: url(../../img/Icon-user.png);
+	background-image: url(../../../img/Icon-user.png);
 	background-size: 40px 40px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -100,7 +100,7 @@ div#web{
 	background: #666;
 	border-radius: 4px;
 	cursor: pointer;
-	background-image: url(../../img/web.png);
+	background-image: url(../../../img/web.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -132,7 +132,7 @@ div#opcion_web div:hover{
 }
 div#web:hover{
 	background: #333;
-	background-image: url(../../img/web.png);
+	background-image: url(../../../img/web.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -153,7 +153,7 @@ div#revision{
 	background: #666;
 	border-radius: 4px;
 	cursor: pointer;
-	background-image: url(../../img/revision.png);
+	background-image: url(../../../img/revision.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -185,7 +185,7 @@ div#opcion_revision div:hover{
 }
 div#revision:hover{
 	background: #333;
-	background-image: url(../../img/revision.png);
+	background-image: url(../../../img/revision.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -206,7 +206,7 @@ div#cryptography{
 	background: #666;
 	border-radius: 4px;
 	cursor: pointer;
-	background-image: url(../../img/crypto.png);
+	background-image: url(../../../img/crypto.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -238,7 +238,7 @@ div#opcion_cryptography div:hover{
 }
 div#cryptography:hover{
 	background: #333;
-	background-image: url(../../img/crypto.png);
+	background-image: url(../../../img/crypto.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -259,7 +259,7 @@ div#custom{
 	background: #666;
 	border-radius: 4px;
 	cursor: pointer;
-	background-image: url(../../img/custom.png);
+	background-image: url(../../../img/custom.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -291,7 +291,7 @@ div#opcion_custom div:hover{
 }
 div#custom:hover{
 	background: #333;
-	background-image: url(../../img/custom.png);
+	background-image: url(../../../img/custom.png);
 	background-size: 70px 70px;
 	background-repeat: no-repeat;
 	background-position: top 8px center;
@@ -316,9 +316,10 @@ div#body{
 	border: 0px solid #fff;
 	margin: 40px 0px 0px 0px;
 }
-iframe#iframe{
+div#iframe{
 	width: 800px;
 	height: 500px;
+	padding-top: 25px;
 	border: 1px solid #fff;
 	position: relative;
 	top: -495px;
@@ -333,4 +334,17 @@ div#home{
 	text-align: center;
 	height: 300px;
 	margin: 30px auto;
+}
+table{
+	border: 1px solid;
+    width: 500px;
+    height: 19px;
+    margin: 0px auto;
+}
+td.name{
+	width: 400px;
+	border-right: 1px solid;
+}
+td.point{
+	width: 100px;
 }

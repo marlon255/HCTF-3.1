@@ -1,0 +1,18 @@
+body{
+	background: #666;
+}
+table{
+	border: 1px solid #FFF;
+	border-radius: 4px;
+    width: 500px;
+    height: 19px;
+    margin: 0px auto;
+    color: #FFF;
+}
+td.name{
+	width: 400px;
+	border-right: 1px solid;
+}
+td.point{
+	width: 100px;
+}

@@ -23,6 +23,7 @@
 		// Verifica se já há o usuario
 			$validar = $PDO->prepare("SELECT * FROM users WHERE usuario = ?");
 			$validar->execute(array($user));
+			header('location: ../index.php');
 		if($validar->rowCount() == 0):
 		// Executa o cadastro	
 			$cadastro->execute();

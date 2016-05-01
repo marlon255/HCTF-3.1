@@ -14,14 +14,11 @@
 		unset($_SESSION['senha']);
 		header('location: index.php');
 	endif;
-	if(isset($_POST['ranking'])):
-		header('location: ranking');
-	endif;
 ?>
 <title>HCTF 3.1</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
-<script src="js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
     $("#web").click(function(){
@@ -54,8 +51,8 @@
 </script>
 </head>
 <?php
-	require_once('../php/conexao.php');
-	require_once('../php/usuario.php');
+	require_once('../../php/conexao.php');
+	require_once('../../php/usuario.php');
 ?>
 <body>
 	<div id="opcoes">
@@ -87,36 +84,62 @@
 				<h2>WEB</h2>
 			</div>
 				<div id="opcion_web">
-					<a href="web/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="web/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="web/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a href="../web/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="../web/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="../web/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="revision">
 				<h2>REVISION</h2>
 			</div>
 				<div id="opcion_revision">
-					<a href="revision/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="revision/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="revision/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a href="../revision/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="../revision/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="../revision/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="cryptography">
 				<h2>CRYPTO</h2>
 			</div>
 				<div id="opcion_cryptography">
-					<a href="crypto/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="crypto/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="crypto/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a href="../crypto/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="../crypto/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="../crypto/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 			<div id="custom">
 				<h2>CUSTOM</h2>
 			</div>
 				<div id="opcion_custom">
-					<a href="custom/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="custom/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="custom/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a href="../custom/pergunta01/index.php" target="iframe"><div>1</div></a>
+					<a href="../custom/pergunta02/index.php" target="iframe"><div>2</div></a>
+					<a href="../custom/pergunta03/index.php" target="iframe"><div>3</div></a>
 				</div>
 		</div>
-		<iframe name="iframe" id="iframe" src="home.php">
+		<div name="iframe" id="iframe">
+		<table style="text-align: center;">
+			<tr>
+				<td class="name">
+					Nome do Usuario
+				</td>
+				<td class="point">
+					Pontos
+				</td>
+			</tr>
+		</table>
+<?php
+	$sql_point="SELECT * FROM users ORDER BY pontos DESC";
+	$dados_point=$PDO->prepare($sql_point);
+	$dados_point->execute();
+	$dados_point->setFetchMode(PDO::FETCH_ASSOC);
+	while($exibir_point = $dados_point->fetch()){
+?>
+	<table>
+		<tr>
+			<td class="name"><?=$exibir_point['nome'];?></td>
+			<td class="point"><?=$exibir_point['pontos'];?></td>
+		</tr>
+	</table>
+<?php
+	}
+?>
 		</div>
 	</div>
 </body>
