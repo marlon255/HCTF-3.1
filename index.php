@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
+<?php
+	require_once('php/login.php');
+?>
 <body>
 	<div id="topo">
 		<div id="logo">
@@ -14,12 +17,13 @@
 		<form method="post">
 			<fieldset>
 				<legend>Login</legend>
-				<input type="text" name="" id="" placeholder="Login" class="text" >
-				<input type="password" name="" id="" placeholder="Password" class="text" >
-				<input type="submit" name="" id="" value="Login" class="submit" >
+				<input type="text" name="userlog" id="userlog" placeholder="Login" class="text" >
+				<input type="password" name="passlog" id="passlog" placeholder="Password" class="text" >
+				<!-- BOTAO PARA LOGAR -->
+				<input type="submit" name="submitlog" id="submitlog" value="Login" class="submit" >
 			</fieldset>
 		</form>
 	</div>
-	<div id="cadastro" onClick="location.href='cadastro.php';">Register</div>
+	<div id="cadastro" onClick="location.href='php/cadastro.php';">Register</div>
 </body>
 </html>

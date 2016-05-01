@@ -1,5 +1,20 @@
 <html>
 <head>
+<?php
+	session_start();
+	if((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha']) == true)):
+		unset($_SESSION['login']);
+		unset($_SESSION['senha']);
+		header('location: ../index.php');
+	endif;
+	$logado = $_SESSION['login'];
+	if(isset($_POST['exitsession'])):
+		session_destroy();
+		unset($_SESSION['login']);
+		unset($_SESSION['senha']);
+		header('location: index.php');
+	endif;
+?>
 <title>HCTF 3.1</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -35,6 +50,10 @@
 
 </script>
 </head>
+<?php
+	require_once('../php/conexao.php');
+	require_once('../php/usuario.php');
+?>
 <body>
 	<div id="opcoes">
 		<div id="logo">
@@ -45,14 +64,16 @@
 		</div>
 		<div id="infor_user">
 			<div id="user_dados">
-				<h2>Usuário:</h2>
-				<h2>Pontos:</h2>
+				<h2>Usuário: <?php echo $usuario_exibir['nome']; ?></h2>
+				<h2>Pontos: <?php echo $usuario_exibir['pontos']; ?></h2>
 			</div>
 			<div id="picture">
 			</div>
 			<div id="exit">
-				<h2>Alterar Imagem</h2>
-				<h2>Sair</h2>
+				<form method="post">
+					<input type="submit" name="altimg" value="Alterar Imagem" >
+					<input type="submit" name="exitsession" value="Sair" >
+				</form>
 			</div>
 		</div>
 	</div>

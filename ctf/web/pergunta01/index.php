@@ -1,12 +1,18 @@
 <html>
 <head>
+	<?php
+		session_start();
+		$logado = $_SESSION['login']
+	?>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/estilo.css">
 </head>
 <?php
 	require_once('../../../php/conexao.php');
+	require_once('../../../php/usuario.php');
 	require_once('php/select.php');
-	$resposta_sql = "SELECT * FROM respostas WHERE id_user = '49' && respondeu = '".$rows['resposta']."'";
+	header('Content-Type: text/html; charset=utf-8');
+	$resposta_sql = "SELECT * FROM respostas WHERE id_user = '".$usuario_exibir['id_user']."' && respondeu = '".$rows['resposta']."'";
 	$respostadb = $PDO->prepare($resposta_sql);
 	$respostadb->execute();
 	$respondeudb = $respostadb->rowCount();
@@ -19,16 +25,19 @@ switch ($respondeudb) {
 		$respostaweb1 = $_POST['respostaweb1'];
 		$respostaweb1db = $rows['resposta'];
 		switch ($respostaweb1) {
+			case $respostaweb1 === NULL:
+				echo "<script>alert('Digite uma resposta.')</script>";
+			break;
 			case $respostaweb1 === $respostaweb1db:
 			/* ADICIONANDO O PONTO DA QUESTAO AO USUARIO */
-				$ponto_user = '395';
+				$ponto_user = $usuario_exibir['pontos'];
 				$pontoweb1db = $rows['valor'];
 				$ponto_new = $ponto_user+$pontoweb1db;
-				$sql_ponto = "UPDATE users SET pontos='".$ponto_new."' WHERE id_user = '49'";
+				$sql_ponto = "UPDATE users SET pontos='".$ponto_new."' WHERE id_user = '".$usuario_exibir['id_user']."'";
 				$result_ponto = $PDO->prepare($sql_ponto);
 				$result_ponto->execute();
 			/* ADICIONANDO A QUESTAO NA TABELA QUANDO TIVER CORRETO */
-				$id_user = "49";
+				$id_user = $usuario_exibir['id_user'];
 				$id_pergunta = $rows['id'];
 				$resposta = $_POST['respostaweb1'];
 				$sql_question = "INSERT INTO respostas (id_user, id_pergunta, respondeu) VALUES ('$id_user','$id_pergunta','$resposta')";
