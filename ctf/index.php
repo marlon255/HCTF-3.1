@@ -14,9 +14,6 @@
 		unset($_SESSION['senha']);
 		header('location: index.php');
 	endif;
-	if(isset($_POST['ranking'])):
-		header('location: ranking');
-	endif;
 ?>
 <title>HCTF 3.1</title>
 <meta charset="UTF-8">
@@ -50,7 +47,9 @@
     });
 </script>
 <script type="text/javascript">
-
+function carregar(pagina){
+        $("#iframe").load(pagina);
+    }
 </script>
 </head>
 <?php
@@ -75,7 +74,7 @@
 			<div id="exit">
 				<form method="post">
 					<input type="submit" name="altimg" value="Alterar Imagem" >
-					<input type="submit" name="ranking" value="Ranking">
+					<input type="button" name="ranking" onclick="carregar('ranking/index.php')" value="Ranking">
 					<input type="submit" name="exitsession" value="Sair" >
 				</form>
 			</div>
@@ -87,36 +86,37 @@
 				<h2>WEB</h2>
 			</div>
 				<div id="opcion_web">
-					<a href="web/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="web/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="web/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a onclick="carregar('web/pergunta01/index.php')" ><div>1</div></a>
+					<a onclick="carregar('web/pergunta02/index.php')" ><div>2</div></a>
+					<a onclick="carregar('web/pergunta03/index.php')" ><div>3</div></a>
 				</div>
 			<div id="revision">
 				<h2>REVISION</h2>
 			</div>
 				<div id="opcion_revision">
-					<a href="revision/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="revision/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="revision/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a onclick="carregar('revision/pergunta01/index.php')" ><div>1</div></a>
+					<a onclick="carregar('revision/pergunta02/index.php')" ><div>2</div></a>
+					<a onclick="carregar('revision/pergunta03/index.php')" ><div>3</div></a>
 				</div>
 			<div id="cryptography">
 				<h2>CRYPTO</h2>
 			</div>
 				<div id="opcion_cryptography">
-					<a href="crypto/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="crypto/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="crypto/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a onclick="carregar('crypto/pergunta01/index.php')" ><div>1</div></a>
+					<a onclick="carregar('crypto/pergunta02/index.php')" ><div>2</div></a>
+					<a onclick="carregar('crypto/pergunta03/index.php')" ><div>3</div></a>
 				</div>
 			<div id="custom">
 				<h2>CUSTOM</h2>
 			</div>
 				<div id="opcion_custom">
-					<a href="custom/pergunta01/index.php" target="iframe"><div>1</div></a>
-					<a href="custom/pergunta02/index.php" target="iframe"><div>2</div></a>
-					<a href="custom/pergunta03/index.php" target="iframe"><div>3</div></a>
+					<a onclick="carregar('custom/pergunta01/index.php')" ><div>1</div></a>
+					<a onclick="carregar('custom/pergunta02/index.php')" ><div>2</div></a>
+					<a onclick="carregar('custom/pergunta03/index.php')" ><div>3</div></a>
 				</div>
 		</div>
-		<iframe name="iframe" id="iframe" src="home.php">
+		<div name="iframe" id="iframe">
+		<?php include_once('home.php'); ?>
 		</div>
 	</div>
 </body>

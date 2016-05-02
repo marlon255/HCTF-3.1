@@ -17,7 +17,7 @@
 	$dados_point=$PDO->prepare($sql_point);
 	$dados_point->execute();
 	$dados_point->setFetchMode(PDO::FETCH_ASSOC);
-	while($exibir_point = $dados_point->fetch()){
+	while($exibir_point = $dados_point->fetch()):
 ?>
 	<table>
 	<tr>
@@ -26,6 +26,5 @@
 	</tr>
 	</table>
 <?php
-	}
+	endwhile;
 ?>
-<a href="../index.php" style="text-decoration: none; color:#FFF; margin: 50%;">Voltar</a>
